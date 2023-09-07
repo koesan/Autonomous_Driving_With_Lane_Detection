@@ -2,10 +2,7 @@
  OpenCV kullanarak şerit tespiti ve CARLA simulasyon ortamında otonom araç sürüşü
 
  
-Gereksinimler
-
-
-Proje, aşağıdaki yazılım ve kütüphanelere ihtiyaç duyar:
+-Gereksinimler
 
 * CARLA Simülasyon Ortamı (Sürüm 0.9.14)
 
