@@ -1,4 +1,4 @@
 # Serit_tespit_ile_otonom_surus
  OpenCV kullanarak CARLA simulasyon ortamında otonom araç
 
-![Sürüş videosu](/video/sürüş_videosu.mp4)
+![Video Açıklaması](video_klasoru/sürüş_videom.mp4)
