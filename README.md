@@ -1,7 +1,7 @@
 # Serit_tespit_ile_otonom_surus
  OpenCV kullanarak CARLA simulasyon ortamında otonom araçs
  
-#Gereksinimler
+Gereksinimler
 
 Proje, aşağıdaki yazılım ve kütüphanelere ihtiyaç duyar:
 
