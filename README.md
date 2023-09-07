@@ -1,4 +1,4 @@
-# Serit_tespit_ile_otonom_surus
+# Serit_tespit_ve_otonom_surus
  OpenCV kullanarak şerit tespiti ve CARLA simulasyon ortamında otonom araç sürüşü
 
  
