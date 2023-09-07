@@ -5,4 +5,3 @@
   <source src="video/sürüş_videosu.mp4" type="video/mp4">
   Tarayıcınız video etiketini desteklemiyor.
 </video>
-![Sürüş videosu](video/sürüş_videosu.mp4)
