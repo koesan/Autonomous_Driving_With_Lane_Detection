@@ -1,6 +1,13 @@
-# Carla Simülatörü Şerit Tespiti Projesi
+# Lane Detection Project with Carla Simulator (Carla Simülatörü Şerit Tespiti Projesi).
 
+***
+
+This project demonstrates a lane detection system using the Carla autonomous driving simulator. The goal is to detect lane lines and steer the vehicle within the detected lane.
+
+***
 Bu proje, Carla otonom sürüş simülatörünü kullanarak bir şerit tespit sistemi göstermektedir. Amacımız, şerit çizgilerini tespit ederek simülasyondaki bir aracı tespit edilen şeride göre yönlendirmektir.
+
+***
 
 ## Proje Genel Bakış
 
