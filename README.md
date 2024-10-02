@@ -26,7 +26,7 @@ Proje şu ana bileşenlerden oluşmaktadır:
 
 3. **Şerit Tespiti**:
    - Görüntüler, şerit tespiti için kuş bakışı görünümüne dönüştürülür.
-   - Kaydırma penceresi tekniği ile şerit pikselleri belirlenir.
+   - Kayan pencere(solidi windows) tekniği ile şerit pikselleri belirlenir.
    - Şerit piksellerine ikinci dereceden bir polinom eğrisi uydurulur.
    - Şeridin eğrilik yarıçapı hesaplanarak şeridin ne kadar keskin bir şekilde kıvrıldığı ölçülür.
 
@@ -44,17 +44,12 @@ Proje şu ana bileşenlerden oluşmaktadır:
    - Carla simülatörünü başlatın.
    - Ana Python dosyasını çalıştırın: 
      ```bash
-     python lane_detection.py
+     python main.py
      ```
    - Araç, Carla ortamında sürüşe başlayacak ve şerit tespit sistemi, tespit edilen şerit çizgilerine göre aracı yönlendirecektir.
 
 3. **Durdurma**:
    - Programı durdurmak için OpenCV penceresinde `q` tuşuna basın.
-
-## Dosyalar
-
-- `lane_detection.py`: Şerit tespiti ve araç kontrolü için ana Python betiği.
-- `README.md`: Proje kurulumu ve kullanımına dair dokümantasyon.
 
 ## Önemli Fonksiyonlar
 
@@ -64,10 +59,6 @@ Proje şu ana bileşenlerden oluşmaktadır:
 - **fit_poly()**: Tespit edilen şerit piksel noktalarına ikinci dereceden bir polinom eğrisi uydurur.
 - **measure_curvature()**: Şerit çizgilerinin eğrilik yarıçapını hesaplar.
 - **plot()**: Çıkış görüntüsüne şerit çizgilerini çizer ve şerit tespitine dayalı araç kontrolünü uygular.
-
-## Lisans
-
-Bu proje MIT Lisansı altında lisanslanmıştır.
 
 ---
 
