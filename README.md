@@ -8,7 +8,19 @@ This project demonstrates a lane detection system using the Carla autonomous dri
 Bu proje, Carla otonom sürüş simülatörünü kullanarak bir şerit tespit sistemi göstermektedir. Amacımız, şerit çizgilerini tespit ederek simülasyondaki bir aracı tespit edilen şeride göre yönlendirmektir.
 
 ***
+## Project Overview
 
+The project consists of these main components:
+
+- **Carla Simulator Setup**: The code connects to the Carla server, loads a map, spawns a vehicle, and attaches a camera sensor to capture images.
+- **Lane Detection**: Camera images from the vehicles perspective are processed to detect lane markings.
+- **Perspective Transformation**: images are transformed into a bird-eye view to make lane detection easier.
+- **Sliding Window Technique**: A sliding window algorithm is applied to locate lane pixels in the processed images.
+- **Polynomial Fitting**: Detected lane pixels are fitted to a second-degree polynomial representing lane lines.
+- **Curvature Calculation**: curvature of the lane lines and the vehicle’s position within lane are calculated.
+- **Vehicle Control**: steering and speed of vehicle are controlled based on detected lane to keep the vehicle centered.
+
+***
 ## Proje Genel Bakış
 
 Proje şu ana bileşenlerden oluşmaktadır:
@@ -21,6 +33,30 @@ Proje şu ana bileşenlerden oluşmaktadır:
 - **Eğrilik Hesaplama**: Şerit çizgilerinin eğriliği ve aracın şeritteki pozisyonu hesaplanır.
 - **Araç Kontrolü**: Tespit edilen şerit çizgilerine göre aracın direksiyonu ve hızı kontrol edilir ve araç şeridin ortasında tutulur.
 
+***
+
+## How It Works?
+
+1. **Simulation Setup**:
+   - The Carla client connects to the server at `localhost:2000`.
+   - Weather and environmental conditions (cloudiness, precipitation, etc.) are set.
+   - A vehicle is spawned at a predefined point in the simulation.
+
+2. **Camera Setup**:
+   - A RGB camera sensor is attached to vehicle to capture front-facing images.
+
+3. **Lane Detection**:
+   - images are transformed into a top-down view.
+   - Sliding window method is used to identify lane pixels.
+   - A second-degree polynomial curve is fitted to the lane pixels.
+   - The curvature of lane is calculated, showing how sharply lane is curving.
+
+4. **Vehicle Control**:
+   - Based on the detected lane, the vehicles position is adjusted.
+   - vehicle receives steering, throttle, and brake commands to stay centered in lane.
+   - vehicle will turn left, right, or go straight based on lane curvature.
+
+***
 ## Nasıl Çalışır?
 
 1. **Simülasyon Kurulumu**:
@@ -41,6 +77,26 @@ Proje şu ana bileşenlerden oluşmaktadır:
    - Araç şeride göre konumlandırılır ve uygun direksiyon, gaz ve fren komutları uygulanarak araç şeridin ortasında tutulur.
    - Şerit eğriliğine göre araç sola, sağa döner veya ileri doğru devam eder.
 
+***
+## How To Run
+
+1. **Requirements**:
+   - Carla Simulator (Make sure the server is running on `localhost:2000`).
+   - Python dependencies: `cv2`, `carla`, `numpy`, and other necessary libraries.
+
+2. **Steps**:
+   - Start the Carla simulator.
+   - Run the main Python script:
+     ```bash
+     python main.py
+     ```
+   - vehicle will start driving in the Carla environment, and lane detection system will guide it based on detected lane lines.
+
+3. **Stopping the Program**:
+   - Press `q` on the OpenCV window to stop the program.
+
+***
+
 ## Projenin Çalıştırılması
 
 1. **Gereksinimler**:
@@ -58,6 +114,19 @@ Proje şu ana bileşenlerden oluşmaktadır:
 3. **Durdurma**:
    - Programı durdurmak için OpenCV penceresinde `q` tuşuna basın.
 
+***
+
+## Key Functions
+
+- **get_perspective_matrices()**: Applies perspective transformation to make lane detection easier.
+- **hist()**: Computes a pixel intensity histogram to identify lane lines.
+- **find_lane_pixels()**: Detects lane pixel points using a sliding window technique.
+- **fit_poly()**: Fits a second-degree polynomial curve to the detected lane pixel points.
+- **measure_curvature()**: Calculates the curvature off lane lines.
+- **plot()**: Draws lane lines on the output image and applies vehicle control based on lane detection.
+
+***
+
 ## Önemli Fonksiyonlar
 
 - **get_perspective_matrices()**: Şeritleri daha kolay tespit edebilmek için perspektif dönüşümü uygular.
@@ -67,10 +136,13 @@ Proje şu ana bileşenlerden oluşmaktadır:
 - **measure_curvature()**: Şerit çizgilerinin eğrilik yarıçapını hesaplar.
 - **plot()**: Çıkış görüntüsüne şerit çizgilerini çizer ve şerit tespitine dayalı araç kontrolünü uygular.
 
----
+***
+Feel free to customize and expand this lane detection system in your own Carla simulation projects!
+
+***
 
 Carla simülatörü projelerinizde bu şerit tespit sistemini özelleştirip genişletmekten çekinmeyin!
-
+***
 
 https://github.com/koesan/Serit_tespit_ile_otonom_surus/assets/96130124/8671b396-9942-4727-b576-17d8e283beb7
 
